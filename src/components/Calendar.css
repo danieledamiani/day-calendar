@@ -1,0 +1,73 @@
+.calendar-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 60px auto;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  flex: 9;
+}
+
+.calendar-events {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  margin-top: 60px;
+}
+
+.calendar-grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 59px;
+  right: 0;
+  z-index: -1;
+  background-size: 15px 15px;
+  background-image: linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
+}
+
+.calendar-row {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  width: 100%;
+}
+.calendar-event-0{
+  grid-column-end: span 10;
+}
+
+.calendar-event-1 {
+  grid-column-end: span 1;
+}
+.calendar-event-2 {
+  grid-column-end: span 2;
+}
+.calendar-event-3 {
+  grid-column-end: span 3;
+}
+
+.calendar-event-4 {
+  grid-column-end: span 4;
+}
+
+.calendar-event-5 {
+  grid-column-end: span 5;
+}
+
+.calendar-event-6 {
+  grid-column-end: span 6;
+}
+
+.calendar-event-7 {
+  grid-column-end: span 7;
+}
+
+.calendar-event-8 {
+  grid-column-end: span 8;
+}
+
+.calendar-event-9 {
+  grid-column-end: span 9;
+}
+
+

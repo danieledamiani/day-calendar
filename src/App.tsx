@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { FC, useState, useEffect } from 'react';
+import { Event } from './interfaces';
+import { Calendar } from './components';
+import { getEventService } from './services';
+import {
+  dayStart,
+  dayEnd,
+  minimumEventDuration,
+  eventsToGenerate,
+} from './constants';
+
 import './App.css';
 
-function App() {
+const App: FC = () => {
+  const [events, setEvents] = useState<Event[]>([]);
+
+  useEffect(() => {
+    setEvents(
+      getEventService(dayStart, dayEnd, minimumEventDuration, eventsToGenerate)
+        .events
+    );
+  }, [setEvents]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Calendar events={events} dayStart={dayStart} dayEnd={dayEnd} />
     </div>
   );
-}
+};
 
 export default App;

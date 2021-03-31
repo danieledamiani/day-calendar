@@ -1,0 +1,23 @@
+.calendar-times {
+  border-right: 1px solid gray;
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 9px;
+}
+
+.calendar-times > div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  line-height: 14px;
+  height: 14px;
+  padding-right: 10px;
+  border-top: 1px solid var(--calendar-event-border-color);
+}
+
+.calendar-times > div:nth-child(4n + 1) {
+  font-weight: bold;
+}
+
+.calendar-times > div:nth-child(3n + 1) {
+  border-bottom-color: var(--calendar-time-hour-border-color);
+}
